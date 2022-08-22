@@ -46,7 +46,24 @@ const getIpVideogame= async (req,res)=>{
                 }
 
              }})
-             videoAllData=videoAllData.concat(dbVideogames)
+             
+             let VideogameData2= await  dbVideogames.map(res=>{
+         
+                return{
+                    id:res.id,
+                    name:res.name,
+                    released:res.released,
+                    image:res.image,
+                    rating:res.rating,
+                    genres:res.genres.map(res=>res.name),
+                    platforms:res.platforms.split(',')
+                }
+             })
+
+            
+
+   
+             videoAllData=videoAllData.concat(VideogameData2)
 
          
         if(name){

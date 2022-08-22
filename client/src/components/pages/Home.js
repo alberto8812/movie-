@@ -1,8 +1,8 @@
-import React, {useEffect, useState } from 'react';
+import React, {memo, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getCharacters, getGenres,loader } from '../../redux/actions';
 import { Link } from "react-router-dom";
-import { Cards } from '../common/Cards'; 
+import  Cards  from '../common/Cards'; 
 import  '../../styles/home.css'
 import Paginate from '../common/Paginate';
 import NavBar from '../component/NavBar';
@@ -68,7 +68,13 @@ const Home = () => {
        {currentCards.length<1?<div className='loader'><Loaders/></div>:currentCards.map(res=>{
       
           return(<div className='container_oneCard' key={res.id}>{
-            <Cards name={res.name} image={res.image} rating={res.rating} id={res.id} />
+            <Cards 
+            name={res.name} 
+            image={res.image} 
+            rating={res.rating} 
+            id={res.id} 
+            genres={res.genres}
+            />
             
             }
           </div>)
