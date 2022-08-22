@@ -56,7 +56,8 @@ const getIpVideogame= async (req,res)=>{
                     image:res.image,
                     rating:res.rating,
                     genres:res.genres.map(res=>res.name),
-                    platforms:res.platforms.split(',')
+                    platforms:res.platforms.split(','),
+                    createInDb:re.createInDb
                 }
              })
 

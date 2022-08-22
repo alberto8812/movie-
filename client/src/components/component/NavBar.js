@@ -52,7 +52,7 @@ const getAllGenres=useSelector((state)=>state.genres)
         <div className='main_searchbar_selector'>
         <label>Order by</label>
         <select className='main_selector'  onClick={(e=>handleOrderCharacter(e))} >
-           <option value={'-->'} className='main_option_select' >{'-->'}</option>
+           <option value={'-->'} className='main_option_select' >{'...'}</option>
            <option value='Ascendente' >Ascendente</option>
            <option value='desendente' >desendente</option>
         </select>
@@ -61,7 +61,7 @@ const getAllGenres=useSelector((state)=>state.genres)
         <div className='main_searchbar_selector'>
          <label>Genres</label>
         <select className='main_selector'  onClick={(e=>handleFilterGenres(e))}>
-        <option value={'-->'} className='main_option_select' >{'-->'}</option>
+        <option value={'-->'} className='main_option_select' >{'...'}</option>
          {getAllGenres.length>1 && getAllGenres.map(res=>{
             return(<option value={res.name} key={res.id} className='main_option_select' >{res.name}</option>)
          })}
@@ -72,7 +72,7 @@ const getAllGenres=useSelector((state)=>state.genres)
         <div className='main_searchbar_selector'>
         <label>Source</label>
         <select className='main_selector' onClick={e=>handleFilterCreate(e)}>
-        <option  value={'-->'} className='main_option_select'>{'-->'}</option>
+        <option  value={'-->'} className='main_option_select'>{'...'}</option>
         <option value={'Created'} className='main_option_select'>{'Created'}</option>
         <option  value={'Api'}  className='main_option_select'>{'Api'} </option>
         </select>
@@ -81,7 +81,7 @@ const getAllGenres=useSelector((state)=>state.genres)
         <div className='main_searchbar_selector'>
         <label>Rating</label>
         <select className='main_selector' onClick={e=>handleRatingCharacter(e)} >
-        <option  value={'-->'} className='main_option_select'>{'-->'}</option>
+        <option  value={'-->'} className='main_option_select'>{'...'}</option>
         <option value={'highes'} className='main_option_select'>{'highest to lowest'}</option>
         <option value={'lowest'} className='main_option_select'>{'lowest to highest'}</option>
         </select>
