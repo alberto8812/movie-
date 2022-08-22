@@ -56,7 +56,7 @@ const Detail = props => {
           <div className='main_detail_genres_icon'>
           {detail.genres.map(res=>{
             return(
-            <div>
+            <div key={res}  className='main_detail_genres_exp'>
               <h3><b>{res}</b></h3>
             </div>)
           })}
@@ -70,8 +70,8 @@ const Detail = props => {
           {detail.platforms.map(res=>{
             console.log(res)
            return  (
-            <div key={res}>
-            <img src={iconPlatfomrs[res.split(" ").join("")]} alt={detail.name} className='genres_icon'/>
+            <div key={res} className='main_detail_genres_plat'>
+            <img src={iconPlatfomrs[res.split(" ").join("")]} alt={detail.name} className='genres_icon' style={{width:'50%'}}/>
             </div>
             )
           })}

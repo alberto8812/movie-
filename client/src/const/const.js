@@ -17,6 +17,7 @@ import xbox from '../img/svg consolas/xbox-1.svg';
 import windows from '../img/svg consolas/windows-flag.svg'
 import playstation from '../img/svg consolas/playstation-4.svg'
 import sega from '../img/svg consolas/sega-1.svg'
+import Web from '../img/svg consolas/browser_internet_page_security_web_webpage_website_icon_127036 (1).svg'
 ///////////////////////////////////////////////////////////
 export const image1=image_1;
 export const image2=image_2
@@ -49,7 +50,7 @@ export const iconPlatfomrs={
     Linux:linux,
     Android:Android,
     iOS:ios,
-    Web:windows,
+    Web:Web,
     SEGA:sega
 
 }
