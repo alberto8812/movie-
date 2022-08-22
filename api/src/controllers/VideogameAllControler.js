@@ -16,7 +16,7 @@ const getIpVideogame= async (req,res)=>{
             let videoAllData=[],
             url=`https://api.rawg.io/api/games?key=${DB_KEY}`;
                
-            for (let index = 0; index < 1; index++) {
+            for (let index = 0; index < 6; index++) {
 
                 let urlVideogame=(await axios.get(url)).data;
                 let VideogameData= await urlVideogame.results.map(res=>{
@@ -57,7 +57,7 @@ const getIpVideogame= async (req,res)=>{
                     rating:res.rating,
                     genres:res.genres.map(res=>res.name),
                     platforms:res.platforms.split(','),
-                    createInDb:re.createInDb
+                    createInDb:res.createInDb
                 }
              })
 
