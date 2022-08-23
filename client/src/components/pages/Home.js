@@ -1,13 +1,13 @@
-import React, {memo, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getCharacters, getGenres,loader } from '../../redux/actions';
-import { Link } from "react-router-dom";
+import { getCharacters, getGenres } from '../../redux/actions';
 import  Cards  from '../common/Cards'; 
 import  '../../styles/home.css'
 import Paginate from '../common/Paginate';
 import NavBar from '../component/NavBar';
 import SearchBar from '../common/SearchBar';
 import Loaders from '../common/Loaders';
+import { iconPlatfomrs } from '../../const/const';
 
 
 
@@ -55,7 +55,15 @@ const Home = () => {
 
       </header>
 
-      <aside className='home_aside'>asyde</aside>
+      <aside className='home_aside'>
+      <div className='aside_icom_patfrom'>
+      {Object.values(iconPlatfomrs).map(res=>{
+        return(<div className='each_icon'  key={res}>
+          <img src={res} alt='icon'/>
+        </div>)
+      })}
+      </div>
+      </aside>
 
       <body className='home_body'>
         

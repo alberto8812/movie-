@@ -36,12 +36,15 @@ const Detail = props => {
     <div className='main_detail_character'>
     
         <div className='main_character_especification'>
+
          <div className='main_character_especification_name'>
           <h2>{detail.name}</h2>
-          </div>
+         </div>
+
          <div className='main_character_especification_img'>
           <img  src={detail.image} alt="img_video_game"/>
          </div>
+
          <div className='main_character_especification_description'>
           <p>{detail.description}</p>
          </div>
@@ -68,7 +71,7 @@ const Detail = props => {
           <h3>Platforms:</h3>
           <div className='main_detail_genres_icon'>
           {detail.platforms.map(res=>{
-            console.log(res)
+
            return  (
             <div key={res} className='main_detail_genres_plat'>
             <img src={iconPlatfomrs[res.split(" ").join("")]} alt={detail.name} className='genres_icon' style={{width:'50%'}}/>
@@ -83,6 +86,12 @@ const Detail = props => {
           <h3>rating:</h3>
           <label>{detail.rating}</label>
          </div>
+
+          <div>
+            <h4>relised: </h4>
+          <label >{detail.released}</label>
+          </div>
+         
          </div> 
          
          

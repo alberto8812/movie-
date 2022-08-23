@@ -40,7 +40,7 @@ border-radius: 4px;
   grid-column: 4/ span  5;
   display: grid;
   grid-template-columns:1fr;
-  grid-template-rows: 50px 1fr 1fr 30px 1fr;
+  grid-template-rows: 50px 1fr 1fr 120px 1fr;
 
 }
 
@@ -158,6 +158,11 @@ font-size: 1.1rem;
 
 
 /*//////////////////rating//////////////////////*/
+.main_character_detail_rating{
+    border: 0.5px;
+    border-bottom-style: solid;
+    border-radius: 15px;
+}
 
 .main_character_detail_rating label{
     background-color: #3c822f;

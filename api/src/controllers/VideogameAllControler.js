@@ -1,7 +1,6 @@
 
 require('dotenv').config();
 const {DB_KEY} = process.env;
-  
 const {conn}=require("../db")
 const {Videogame,Genres}=conn.models
 const axios=require("axios");
@@ -107,7 +106,7 @@ const getIdvideogame=async (req,res)=>{
                 image:deatailVideogameDb.image,
                 platforms:deatailVideogameDb.platforms.split(','),
                 genres:deatailVideogameDb.genres.map(res=>res.name),
-                released:deatailVideogameDb.released
+                released:deatailVideogameDb.released.split("-").reverse().join("-")
             }       
 
             res.status(202).json(deatailVideogameDbE)
@@ -124,7 +123,8 @@ const getIdvideogame=async (req,res)=>{
                 rating:detailVideogameApi.rating,
                 image:detailVideogameApi.background_image,
                 platforms:detailVideogameApi.parent_platforms.map(res=>res.platform.name),
-                genres:detailVideogameApi.genres.map(res=>res.name)
+                genres:detailVideogameApi.genres.map(res=>res.name),
+                released:detailVideogameApi.released.split("-").reverse().join("-")
             }
           
      
