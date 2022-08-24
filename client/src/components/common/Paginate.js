@@ -26,7 +26,7 @@ const Paginate = ({characteByPage,pagine,getAllCharacters,currentPage}) => {
   return (
     <div className='container_pagination_continer'>
             
- 
+    
             {controlpaginado[0]!==1 && <div
                 onClick={()=>{pagine(controlpaginado[0]-1)}}
                 className='container_pagination_back'>
@@ -48,7 +48,7 @@ const Paginate = ({characteByPage,pagine,getAllCharacters,currentPage}) => {
                {' ->'}
                 </div>}
 
-
+          
 
     </div>
   )

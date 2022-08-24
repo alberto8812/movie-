@@ -12,13 +12,13 @@ const getAllGenres=useSelector((state)=>state.genres)
    const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getEraseCharacter(true));
+    dispatch(getEraseCharacter({load:true,ident:true}));
   }, [])
   
 
    const handleOnclick=(e)=>{
       e.preventDefault();
-      dispatch(getCharacters)
+      dispatch(getCharacters())
     }
 
 

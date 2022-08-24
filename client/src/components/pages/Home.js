@@ -1,13 +1,14 @@
 import React, {useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getCharacters, getGenres } from '../../redux/actions';
+import { getCharacters, getGenres,getTopGame } from '../../redux/actions';
 import  Cards  from '../common/Cards'; 
 import  '../../styles/home.css'
 import Paginate from '../common/Paginate';
 import NavBar from '../component/NavBar';
 import SearchBar from '../common/SearchBar';
 import Loaders from '../common/Loaders';
-import { iconPlatfomrs } from '../../const/const';
+
+import Aside from '../common/Aside';
 
 
 
@@ -16,6 +17,8 @@ import { iconPlatfomrs } from '../../const/const';
 const Home = () => {
        
         const  getAllCharacters=useSelector((state)=>state.characters);
+        const  {detailB}=useSelector((state)=>state);
+
         const dispatch = useDispatch();
         const [orderCharter, setOrderCharter] = useState('')
         const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +27,7 @@ const Home = () => {
         const indexFirtCard=lastCard - characteByPage;
         const currentCards=getAllCharacters.slice(indexFirtCard,lastCard)
 
-
+      console.log(detailB)
       const pagine=(numberPagine,)=>{
        
           setCurrentPage(numberPagine)
@@ -36,6 +39,14 @@ const Home = () => {
           dispatch(getCharacters());
           dispatch(getGenres());    
         },[])
+
+
+        useEffect(() => {
+          dispatch(getTopGame())
+        }, [getAllCharacters])
+        
+
+        
   
 
 
@@ -54,15 +65,9 @@ const Home = () => {
        </div>
 
       </header>
-
+     
       <aside className='home_aside'>
-      <div className='aside_icom_patfrom'>
-      {Object.values(iconPlatfomrs).map(res=>{
-        return(<div className='each_icon'  key={res}>
-          <img src={res} alt='icon'/>
-        </div>)
-      })}
-      </div>
+      <Aside/>
       </aside>
 
       <body className='home_body'>
@@ -73,7 +78,7 @@ const Home = () => {
       <div className='container_cards'>
      
        
-       {currentCards.length<1?<div className='loader'><Loaders/></div>:currentCards.map(res=>{
+       {currentCards.length<1 ?<div className='loader'><Loaders/></div>:currentCards.map(res=>{
       
           return(<div className='container_oneCard' key={res.id}>{
             <Cards 
@@ -90,12 +95,14 @@ const Home = () => {
        </div>
 
        <div className='container_pagination'>
+     
         <Paginate characteByPage={characteByPage} 
         pagine={pagine} 
         getAllCharacters={getAllCharacters.length} 
         currentPage={currentPage}/>
+    
         </div>
-
+   
       </body>
 
   

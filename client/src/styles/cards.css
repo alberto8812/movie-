@@ -12,6 +12,9 @@
     text-align: center;
     justify-content: center;
     justify-items: center;
+    border: 0.5px;
+    border-bottom-style: solid;
+    border-radius: 15px;
 
 }
 

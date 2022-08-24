@@ -1,5 +1,5 @@
 
-import { GET_LOADER,GET_CHARACTER_BY_ID,GET_CHARACTERS_BY_NAME,GET_PLATFORMS,POST_CREATE_CHARACTER,GET_CHARACTERS,GET_GENRES,GET_GENRES_FILTER,GET_ORDER_CHARACTERS,GET_VIDEOGAME_CREATE,GET_ORDER_RATING_CHARACTERS } from '../Variables';
+import { GET_TOP_GAME,GET_LOADER,GET_CHARACTER_BY_ID,GET_CHARACTERS_BY_NAME,GET_PLATFORMS,POST_CREATE_CHARACTER,GET_CHARACTERS,GET_GENRES,GET_GENRES_FILTER,GET_ORDER_CHARACTERS,GET_VIDEOGAME_CREATE,GET_ORDER_RATING_CHARACTERS } from '../Variables';
 
 const initialState = {
   characters:[],
@@ -7,6 +7,7 @@ const initialState = {
   genres:[],
   Platforms:[],
   detail:[],
+  top:[],
   detailB:true
 
 }
@@ -17,7 +18,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
 
   case GET_CHARACTERS:
-     console.log(payload)
+
     return { ...state, characters:payload,Allcharacters:payload}
   
   case GET_GENRES:
@@ -47,20 +48,15 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return { ...state,Platforms:concatAll}
 
   case GET_CHARACTER_BY_ID:
-        
- 
-    
-        
-           console.log(payload)
-         
-         
-       
+
     return{...state,detail:payload,detailB:false}
 
   case  GET_CHARACTERS_BY_NAME:
+
     return{
       ...state,
-      characters:payload  
+      characters:payload,
+      detailB:false
     }
 
 
@@ -112,8 +108,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
 
         return{...state,characters:payload==='-->'?state.Allcharacters:getOrderCharacters}
-   
-
 
   case GET_ORDER_RATING_CHARACTERS:
 
@@ -144,8 +138,25 @@ const rootReducer = (state = initialState, { type, payload }) => {
         return{...state,characters:payload==='-->'?state.Allcharacters:getOrderRatingCharacters}
     
   case GET_LOADER:
-   
-    return {...state,detailB:payload,detail:[]}
+    return {...state,detailB:payload.load,detail:[],characters:payload.ident?state.characters:[]}
+
+  case GET_TOP_GAME:
+    let topcharactersOrderRating= [...state.Allcharacters];
+    topcharactersOrderRating.sort(function(a,b){
+  
+      if(a.rating>b.rating){
+       return -1
+        }
+      if(a.rating<b.rating){
+        return 1
+        }
+      return 0
+        })
+      
+        topcharactersOrderRating=topcharactersOrderRating.splice(0,10)
+
+
+    return {...state,top:topcharactersOrderRating}
   
   default:
     return state

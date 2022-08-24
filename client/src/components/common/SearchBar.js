@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch} from "react-redux";
 import { sebarchBar_path } from '../../const/const';
-import { getCharactersByName } from '../../redux/actions';
+import { getCharactersByName,getEraseCharacter} from '../../redux/actions';
 import  '../../styles/home.css'
 
 const SearchBar = () => {
@@ -16,6 +16,7 @@ const SearchBar = () => {
     const handleSumit=(e)=>{
         e.preventDefault();
         dispatch(getCharactersByName(name))
+        dispatch(getEraseCharacter({load:true,ident:false}))
     }
 
   return (
