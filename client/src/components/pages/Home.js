@@ -17,7 +17,7 @@ import Aside from '../common/Aside';
 const Home = () => {
        
         const  getAllCharacters=useSelector((state)=>state.characters);
-        const  {detailB}=useSelector((state)=>state);
+   
 
         const dispatch = useDispatch();
         const [orderCharter, setOrderCharter] = useState('')
@@ -25,9 +25,8 @@ const Home = () => {
         const [characteByPage, setCharacteByPage] = useState(15)
         const lastCard=currentPage * characteByPage;
         const indexFirtCard=lastCard - characteByPage;
-        const currentCards=getAllCharacters.slice(indexFirtCard,lastCard)
-
-      console.log(detailB)
+        const currentCards=getAllCharacters.slice(indexFirtCard,lastCard);
+        
       const pagine=(numberPagine,)=>{
        
           setCurrentPage(numberPagine)
@@ -78,7 +77,7 @@ const Home = () => {
       <div className='container_cards'>
      
        
-       {currentCards.length<1 ?<div className='loader'><Loaders/></div>:currentCards.map(res=>{
+       {currentCards.length>1?currentCards.map(res=>{
       
           return(<div className='container_oneCard' key={res.id}>{
             <Cards 
@@ -91,7 +90,7 @@ const Home = () => {
             
             }
           </div>)
-       })}
+       }):<div className='loader'><Loaders/></div>}
        </div>
 
        <div className='container_pagination'>

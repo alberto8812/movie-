@@ -2,6 +2,7 @@ import  { useState } from 'react'
 import {postCreateCharacter} from "../redux/actions/index";
 import { useDispatch} from "react-redux";
 import {useHistory } from "react-router-dom";
+import { MUJER } from '../const/const';
 
 
  export const useGameForm = (Value,validate) => {
@@ -51,6 +52,7 @@ import {useHistory } from "react-router-dom";
         if(Object.keys(errors).length===0){
           console.log("entre")
           let initialValue2={...initialValue,
+            image:initialValue.image===""?MUJER:initialValue.image,
             genres:Object.values(initialValue.genres).filter(res=>res!==null),
             platforms:Object.values(initialValue.platforms).filter(res=>res!==null)}
           dispatch(postCreateCharacter(initialValue2))
