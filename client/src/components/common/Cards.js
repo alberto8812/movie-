@@ -21,7 +21,7 @@ const Cards = ({name,image,rating,id,genres}) => {
       <div className="card_plaform">
         {genres.map(res=>{
           return(
-            <div className="card_plaform__item" >
+            <div className="card_plaform__item" key={res}>
               <h5><p>{res}</p></h5>
             </div>
           )

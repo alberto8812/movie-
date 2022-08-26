@@ -210,7 +210,7 @@ padding: 10px;
 
 .home_aside_1{
     display: grid;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: 500px 50px  1fr;
 
  
 }
@@ -255,7 +255,7 @@ border-radius: 15px;
 
 
 .aside_top{
- 
+
     display: grid;
     grid-template-rows:  repeat(auto-fit,minmax(30px,80px));
     grid-auto-columns: 1fr;
@@ -266,8 +266,11 @@ border-radius: 15px;
 
 
 .aside_top_game{
- border: 1px solid rgb(199, 199, 199);
+
  padding: 2px;
  border-radius:7px ;
+ border: 0.5px;
+border-bottom-style: solid;
+border-radius: 15px;
 }
 

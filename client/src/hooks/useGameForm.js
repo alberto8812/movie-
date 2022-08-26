@@ -2,7 +2,7 @@ import  { useState } from 'react'
 import {postCreateCharacter} from "../redux/actions/index";
 import { useDispatch} from "react-redux";
 import {useHistory } from "react-router-dom";
-import { MUJER } from '../const/const';
+import {  random } from '../const/const';
 
 
  export const useGameForm = (Value,validate) => {
@@ -21,8 +21,9 @@ import { MUJER } from '../const/const';
       }  
         
       const handleChangueCheckbox=(e)=>{
-        console.log(e.target.name)
+
         if(e.target.checked)
+   
         setInitialValue({
           ...initialValue,
           [e.target.name]:{ ...initialValue[e.target.name],[e.target.value]:e.target.value}
@@ -50,11 +51,12 @@ import { MUJER } from '../const/const';
         e.preventDefault()
         setErrors(validate(initialValue))
         if(Object.keys(errors).length===0){
-          console.log("entre")
+          
           let initialValue2={...initialValue,
-            image:initialValue.image===""?MUJER:initialValue.image,
+            image:initialValue.image===""?random():initialValue.image,
             genres:Object.values(initialValue.genres).filter(res=>res!==null),
             platforms:Object.values(initialValue.platforms).filter(res=>res!==null)}
+       
           dispatch(postCreateCharacter(initialValue2))
           alert("The videogame was create")
           setInitialValue({

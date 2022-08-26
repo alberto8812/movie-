@@ -44,7 +44,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
       
       concatAll=[...new Set(concatAll)]
   
-     
+      console.log(concatAll)
       return { ...state,Platforms:concatAll}
 
   case GET_CHARACTER_BY_ID:

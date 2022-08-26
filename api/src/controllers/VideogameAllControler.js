@@ -152,7 +152,7 @@ try {
         createInDb
     }= req.body;
    
-    let streingText= platforms.join(', ')
+    let streingText= platforms.join(',')
    rating= parseFloat(rating)
   
 
@@ -176,7 +176,7 @@ try {
      res.status(202).send('character created successfully')
 
 } catch (error) {
-    console.log(error.message)
+  
     res.status(404).send("stop with found a erro durenf the creation try again"+error)
 }
    

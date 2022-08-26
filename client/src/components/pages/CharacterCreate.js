@@ -21,10 +21,10 @@ const initialForm={
 const validation=(initialValue)=>{
  let error={}
 
-if(!initialValue.name.trim()){
+if(!initialValue.name){
   error.name="The name field is required"
 }
-if(!initialValue.Description.trim()){
+if(!initialValue.Description){
   error.Description="The Description field is required"
 }
 if(Object.values(initialValue.genres).filter(res=>res!==null).length<1){

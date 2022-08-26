@@ -6,7 +6,14 @@ import  image_3  from '../img/image_3.jpg';
 import  image_4  from '../img/image_4.jpg';
 import  image_5  from '../img/image_5.jpg';
 import  image_6  from '../img/image_6.jpg';
-import  mujer from  '../img/random/elden-ring-202161022353269_18.jpg'
+//variables randoms
+import  figura_9 from  '../img/random/figura_9.jpg';
+import  figura_10 from  '../img/random/figura_10.jpg'
+import  figura_11 from  '../img/random/figura_11.jpg'
+import  figura_12 from  '../img/random/figura_12.jpg'
+import  figura_13 from  '../img/random/figura_13.jpg'
+import  figura_14 from  '../img/random/figura_14.jpg'
+
 // varibles svg icon plat forms
 
 import Android from '../img/svg consolas/android.svg';
@@ -26,7 +33,12 @@ export const image3=image_3
 export const image4=image_4
 export const image5=image_5
 export const image6=image_6
-export const MUJER=mujer
+/////////defoult image//////////////////////////////////////////////////////
+ const randoms=[figura_9,figura_10,figura_11,figura_12,figura_13,figura_14]
+
+export const random=()=>{
+  return randoms[Math.floor(Math.random()*randoms.length)]
+}
 
 
 

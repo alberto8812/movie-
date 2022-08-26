@@ -15,7 +15,7 @@ import Aside from '../common/Aside';
 
 
 const Home = () => {
-       
+
         const  getAllCharacters=useSelector((state)=>state.characters);
    
 
@@ -26,7 +26,7 @@ const Home = () => {
         const lastCard=currentPage * characteByPage;
         const indexFirtCard=lastCard - characteByPage;
         const currentCards=getAllCharacters.slice(indexFirtCard,lastCard);
-        
+
       const pagine=(numberPagine,)=>{
        
           setCurrentPage(numberPagine)
@@ -42,16 +42,14 @@ const Home = () => {
 
         useEffect(() => {
           dispatch(getTopGame())
+          
         }, [getAllCharacters])
         
-
-        
-  
-
 
 
   return (
     <div  className='main_home_container'>
+     {console.log(currentCards,"cards unit")}
     <header className='home_header'>
        <h1>Bethesda Games Studios Word</h1>
        
@@ -77,7 +75,7 @@ const Home = () => {
       <div className='container_cards'>
      
        
-       {currentCards.length>1?currentCards.map(res=>{
+       {currentCards.length>0?currentCards.map(res=>{
       
           return(<div className='container_oneCard' key={res.id}>{
             <Cards 
@@ -98,7 +96,9 @@ const Home = () => {
         <Paginate characteByPage={characteByPage} 
         pagine={pagine} 
         getAllCharacters={getAllCharacters.length} 
-        currentPage={currentPage}/>
+        currentPage={currentPage}
+
+        />
     
         </div>
    

@@ -21,7 +21,7 @@ const Aside = props => {
     <div className='aside_top'>
     <h3>Top games: </h3>
       {top&&top.map((res,index)=>{
-        return(<Link to={`/home/${res.id}`} style={{ color: 'rgb(204, 204, 204)', textDecoration: 'none'}}><div className='aside_top_game'>
+        return(<Link to={`/home/${res.id}`} style={{ color: 'rgb(204, 204, 204)', textDecoration: 'none'}} key={index}><div className='aside_top_game' >
           <h5>{`${index +1}.${res.name}`}</h5>
    
         </div></Link>)
