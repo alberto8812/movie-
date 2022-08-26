@@ -209,8 +209,9 @@ padding: 10px;
 /*///////////////////////////////////aside///////////////////////////////////////////*/
 
 .home_aside_1{
+ 
     display: grid;
-    grid-template-rows: 500px 50px  1fr;
+    grid-template-rows: 500px 1200px  1fr;
 
  
 }
@@ -257,17 +258,18 @@ border-radius: 15px;
 .aside_top{
 
     display: grid;
-    grid-template-rows:  repeat(auto-fit,minmax(30px,80px));
+    grid-template-rows:  repeat(auto-fit,minmax(30px,100px));
     grid-auto-columns: 1fr;
-    grid-gap: 5px;
-    align-content: space-between;
+    margin: 2px;
     padding: 7px;
+ 
 }
 
 
 .aside_top_game{
 
  padding: 2px;
+ margin: 20px;
  border-radius:7px ;
  border: 0.5px;
 border-bottom-style: solid;

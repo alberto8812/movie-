@@ -23,7 +23,7 @@ const Carrusel = () => {
     useEffect(() => {
       const interval=setInterval(()=>{
         next( )
-      },9000)
+      },8000)
       return ()=>clearInterval(interval)
     },)  
     

@@ -60,9 +60,7 @@ body{
     
 }
 
-.header_start_title{
-   
-}
+
 
 .header_start_proyect_botton{
     display: flex;
@@ -126,7 +124,7 @@ body{
     height: 500px;
     object-fit: cover;
     opacity: 1;
-    transition: 5s;
+    transition: 4s;
    
 }
 
