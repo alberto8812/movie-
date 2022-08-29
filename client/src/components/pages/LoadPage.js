@@ -4,6 +4,10 @@ import Carrusel from '../common/Carrusel';
 import  '../../styles/loadPage.css'
 import { image6 } from '../../const/const';
 
+
+
+
+
 const LoadPage = () => {
   return (
     <div className="mean_start_proyect">

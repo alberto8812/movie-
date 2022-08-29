@@ -80,8 +80,7 @@ font-size: 1.1rem;
 
 .main_character_detail_genres{
 
-    display: grid;
-    grid-template-rows: 30px minmax(50px, 100px);
+ 
     grid-gap: 2px;
     align-items:center ;
     border: 0.5px;
@@ -94,8 +93,7 @@ font-size: 1.1rem;
 
 .main_character_detail_platforms{
 
-    display: grid;
-    grid-template-rows: 90px minmax(50px, 100px);
+ 
     grid-gap: 5px;
     align-items:center ;
     justify-content: center;
@@ -171,6 +169,8 @@ font-size: 1.1rem;
 }
 
 /*////////////////////////platforms icon////////////////////////////*/
+
+
 .main_detail_genres_icon div{
 
  margin: 4px;

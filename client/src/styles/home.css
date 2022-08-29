@@ -262,6 +262,9 @@ border-radius: 15px;
     grid-auto-columns: 1fr;
     margin: 2px;
     padding: 7px;
+    border: 0.5px;
+    border-bottom-style: solid;
+    border-radius: 15px;
  
 }
 
@@ -276,3 +279,6 @@ border-bottom-style: solid;
 border-radius: 15px;
 }
 
+.aside_top_game:hover{
+    background-color: rgb(129, 130, 131);
+}
