@@ -26,6 +26,11 @@ import windows from '../img/svg consolas/windows-flag.svg'
 import playstation from '../img/svg consolas/playstation-4.svg'
 import sega from '../img/svg consolas/sega-1.svg'
 import Web from '../img/svg consolas/browser_internet_page_security_web_webpage_website_icon_127036 (1).svg'
+
+// personal data////////////////////////////////////////////
+import link from '../img/perdonal/LinkedIn.jpg'
+import git from '../img/perdonal/descarga.jpg'
+
 ///////////////////////////////////////////////////////////
 export const image1=image_1;
 export const image2=image_2
@@ -33,6 +38,8 @@ export const image3=image_3
 export const image4=image_4
 export const image5=image_5
 export const image6=image_6
+export const  links=link
+export const  gits=git
 /////////defoult image//////////////////////////////////////////////////////
  const randoms=[figura_9,figura_10,figura_11,figura_12,figura_13,figura_14]
 
@@ -68,3 +75,20 @@ export const iconPlatfomrs={
     SEGA:sega
 
 }
+
+
+
+/////////////////////// footer////////////////////////////////
+export const consoles=[
+"PC",
+"PS5",
+"Xbox Series X|S",
+"Nintendo Switch",
+"Stadia",
+"Realidad Virtual",
+"Móviles",
+"PS4",
+"Xbox One",
+"3DS",
+"Wii U",
+"Retro"]
