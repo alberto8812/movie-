@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Carrusel from '../common/Carrusel';
 import  '../../styles/loadPage.css'
-import { image6 } from '../../const/const';
+import { consoles, image6,links,gits } from '../../const/const';
 
 
 
@@ -42,7 +42,22 @@ const LoadPage = () => {
          <Carrusel/>
       </body>
 
-      <footer className='footer_start_proyect'>footer</footer>
+      <footer className='footer_start_proyect'>
+      <div className='footer_platform'>
+          <h4>PLATAFORM</h4>
+          <ul className='footer_ul'>
+            {consoles.length>0 && consoles.map(res=>{
+              return <li key={res}>{res}</li>
+            })}
+          </ul>
+        </div>
+
+        <div className='footer_made'>
+         <h3>More information:</h3>
+         <a href='https://n9.cl/3fop6'><img src={links} alt="link" className='footer_img'/></a>
+         <a href='https://github.com/alberto8812'><img src={gits} alt="link" className='footer_img'/></a>
+        </div>
+      </footer>
      
     
        
