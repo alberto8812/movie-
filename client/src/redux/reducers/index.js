@@ -54,10 +54,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
     return{...state,detail:payload,detailB:false, error:{}}
 
   case  GET_CHARACTERS_BY_NAME:
-   console.log(Object.keys(payload))
-   if(Object.keys(payload)[0]==="msg"){
-    console.log("hola")
-   }
+
     return{
       ...state,
       characters:Object.keys(payload)[0]!=="msg"?payload:[...state.Allcharacters],

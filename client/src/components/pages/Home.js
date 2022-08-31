@@ -46,7 +46,6 @@ const Home = () => {
         useEffect(() => {
           if(Object.keys(error)[0]==="msg"){
 
-
             alert(error.msg)
          }
         }, [error])
