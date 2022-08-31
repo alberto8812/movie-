@@ -8,7 +8,9 @@ const initialState = {
   Platforms:[],
   detail:[],
   top:[],
-  detailB:true
+  detailB:true,
+  error:{}
+
 
 }
 
@@ -19,7 +21,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
   case GET_CHARACTERS:
 
-    return { ...state, characters:payload,Allcharacters:payload}
+    return { ...state, characters:payload,Allcharacters:payload, error:{}}
   
   case GET_GENRES:
        
@@ -44,19 +46,23 @@ const rootReducer = (state = initialState, { type, payload }) => {
       
       concatAll=[...new Set(concatAll)]
   
-      console.log(concatAll)
+
       return { ...state,Platforms:concatAll}
 
   case GET_CHARACTER_BY_ID:
 
-    return{...state,detail:payload,detailB:false}
+    return{...state,detail:payload,detailB:false, error:{}}
 
   case  GET_CHARACTERS_BY_NAME:
-
+   console.log(Object.keys(payload))
+   if(Object.keys(payload)[0]==="msg"){
+    console.log("hola")
+   }
     return{
       ...state,
-      characters:payload,
-      detailB:false
+      characters:Object.keys(payload)[0]!=="msg"?payload:[...state.Allcharacters],
+      detailB:false,
+      error:Object.keys(payload)[0]==="msg"?payload:{}
     }
 
 

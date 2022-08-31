@@ -159,6 +159,7 @@ const  CharacterCreate=(props)=>{
                         </div>)})}
                       </div>
                  </div>
+                 
               <div className='from_description'>
                 <label>Description: </label>
                   <textarea

@@ -71,7 +71,7 @@ const getIpVideogame= async (req,res)=>{
        
             videogameName.length?
             res.status(200).json(videogameName)
-            :res.status(404).json({msg:"The movie is no in the server try with other name"})
+            :res.status(202).json({msg:"The movie is no in the server try with other name"})
         }else{
             res.status(202).json(videoAllData)
         }

@@ -15,14 +15,14 @@ import { consoles,links,gits } from '../../const/const';
 const Home = () => {
 
         const  getAllCharacters=useSelector((state)=>state.characters);
-   
+        const {error}=useSelector((state)=>state)
 
         const dispatch = useDispatch();
         const [orderCharter, setOrderCharter] = useState('')
         const [currentPage, setCurrentPage] = useState(1);
         const [characteByPage, setCharacteByPage] = useState(15)
-        const lastCard=currentPage * characteByPage;
-        const indexFirtCard=lastCard - characteByPage;
+        const lastCard=currentPage * characteByPage;//3*15//45
+        const indexFirtCard=lastCard - characteByPage;//45-15//30
         const currentCards=getAllCharacters.slice(indexFirtCard,lastCard);
 
       const pagine=(numberPagine,)=>{
@@ -42,6 +42,14 @@ const Home = () => {
           dispatch(getTopGame())
           
         }, [getAllCharacters])
+        
+        useEffect(() => {
+          if(Object.keys(error)[0]==="msg"){
+
+
+            alert(error.msg)
+         }
+        }, [error])
         
 
 
