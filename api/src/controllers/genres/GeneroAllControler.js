@@ -1,13 +1,13 @@
 require('dotenv').config();
 const {DB_KEY} = process.env;
-const {conn}=require("../db")
+const {conn}=require("../../db")
 const {Genres}=conn.models
 const axios=require("axios")
 
 
 
 
-const getAllGeneros= async (req,res)=>{
+const getAllGenres= async (req,res)=>{
 
     let url=`https://api.rawg.io/api/genres?key=${DB_KEY}`
 
@@ -41,5 +41,5 @@ const getAllGeneros= async (req,res)=>{
 
 
 module.exports={
-    getAllGeneros,
+    getAllGenres,
 }

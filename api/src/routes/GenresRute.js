@@ -1,10 +1,10 @@
 const {Router}=require('express'),
       router=Router(),
-      {getAllGeneros}=require('../controllers/GeneroAllControler');
+      {getAllGenres}=require('../controllers/genres/GeneroAllControler')
 
 
 
-router.get('/',getAllGeneros);
+router.get('/',getAllGenres);
 
 
 

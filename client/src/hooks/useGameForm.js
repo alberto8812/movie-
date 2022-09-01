@@ -50,7 +50,7 @@ import {  random } from '../const/const';
       const handleSubmit=(e)=>{
         e.preventDefault()
         setErrors(validate(initialValue))
-        if(Object.keys(errors).length===0){
+        if(Object.keys(errors).length===0 && initialValue.length>0){
           
           let initialValue2={...initialValue,
             image:initialValue.image===""?random():initialValue.image,

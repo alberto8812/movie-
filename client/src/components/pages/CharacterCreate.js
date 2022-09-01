@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import {getGenres,getPlatforms} from "../../redux/actions/index";
+import React, { useEffect,useState } from 'react'
+import {getGenres,getPlatforms,getCharacters} from "../../redux/actions/index";
 import { useDispatch,useSelector } from "react-redux";
 import { Link} from "react-router-dom";
 import { HOME } from '../../routers/path';
@@ -44,18 +44,28 @@ if(Object.values(initialValue.platforms).filter(res=>res!==null).length<1){
 const  CharacterCreate=(props)=>{
     const {initialValue,errors,handleError, handleChangue,handleChangueCheckbox,handleSubmit}=useGameForm(initialForm,validation)
     const dispatch=useDispatch();
-    const { genres,Platforms}=useSelector((state)=>state)
+    const { genres,Platforms,characters}=useSelector((state)=>state);
+    const [getPlatform, setGetPlatform] = useState([])
+    const [getgenre, setgetgenre] = useState([])
+
 
     useEffect(() => {
       dispatch(getGenres());
-      dispatch(getPlatforms())
+      dispatch(getCharacters())
+
     }, [])
+
+    useEffect(() => {
+      dispatch(getPlatforms());
+    }, [characters])
+    
+    
 
 
   return (
 
     <div className='container_form'> 
-
+      {console.log(getgenre,getPlatform)}
       <div className='form_back'>
             <span><Link to={HOME} style={{ color: 'rgb(204, 204, 204)', textDecoration: 'none'}}>Back home page</Link></span>
             <svg viewBox="0 0 13 10" height="10px" width="15px">
@@ -79,7 +89,6 @@ const  CharacterCreate=(props)=>{
                      value={initialValue.name}
                      name='name'
                      onChange={(e)=>handleChangue(e)}
-                     required
                     />
                     {errors.name && <p style={{color:'red'}}>{errors.name}</p>}
                     </div>
@@ -101,8 +110,6 @@ const  CharacterCreate=(props)=>{
                     onBlur={handleError}
                     type='number'
                     value={initialValue.rating}
-                    min="1.0"
-                    max="5"
                     step="any"
                     name='rating'
                     onChange={(e)=>handleChangue(e)}
