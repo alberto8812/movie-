@@ -29,25 +29,12 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
   case GET_PLATFORMS:
      
-      let AllPlatforms=state.Allcharacters;
-      let concatAll=[];
-
-      AllPlatforms= AllPlatforms.map(res=>{
-        if(Array.isArray(res.platforms)){
-          return res.platforms;
-        }
-        return []}) 
-
-      for (const iterator of AllPlatforms) {
-        if(iterator.length>=1){
-          concatAll=concatAll.concat(iterator)
-        }
-      }
-      
-      concatAll=[...new Set(concatAll)]
+   
+      console.log(payload,"hola")
+  
   
 
-      return { ...state,Platforms:concatAll}
+      return { ...state,Platforms:payload}
 
   case GET_CHARACTER_BY_ID:
 

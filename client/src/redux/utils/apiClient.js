@@ -13,3 +13,5 @@ export const AXIOSCREATECHARACTER= `http://localhost:3001/videogames/create`
 export const AXIOSByName=async(name)=>(await  axios.get(`http://localhost:3001/videogames?name=${name}`)).data
 
 export const AXIOSDetail=async(id)=>(await  axios.get(`http://localhost:3001/videogames/${id}`)).data
+
+export const AXIOSPlatform=async()=>(await  axios.get(`http://localhost:3001/platforms`)).data

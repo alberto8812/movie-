@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import { AXIOSCHARACS, AXIOSCREATECHARACTER, AXIOSGENRES,AXIOSByName,AXIOSDetail } from "../utils/apiClient";
+import { AXIOSCHARACS, AXIOSCREATECHARACTER, AXIOSGENRES,AXIOSByName,AXIOSDetail,AXIOSPlatform } from "../utils/apiClient";
 import {GET_TOP_GAME,GET_LOADER,GET_CHARACTER_BY_ID,GET_CHARACTERS_BY_NAME,GET_PLATFORMS,GET_CHARACTERS,GET_GENRES,GET_GENRES_FILTER,GET_ORDER_CHARACTERS,GET_VIDEOGAME_CREATE,GET_ORDER_RATING_CHARACTERS } from "../Variables";
 
 
@@ -52,6 +52,18 @@ export const getCharactersByName=(name)=>{
 
 }
 
+export const getPlatforms=()=>{
+  return async function(dispatch){
+    let getPlatform=await AXIOSPlatform()
+
+  return dispatch({
+     type:GET_PLATFORMS,
+     payload:getPlatform
+  })
+}
+}
+
+
 export const getVideogameCreate=(payload)=>{
 
      return {
@@ -85,12 +97,7 @@ export const getOrderRatingCharacters=(payload)=>{
   }
 }
 
-export const getPlatforms=()=>{
-  return{
-     type:GET_PLATFORMS
-  
-  }
-}
+
 
 export const getCharacterDetail=(id)=>{
   return async function(dispatch){

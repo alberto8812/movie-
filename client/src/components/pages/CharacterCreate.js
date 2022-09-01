@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import {getGenres,getPlatforms,getCharacters} from "../../redux/actions/index";
+import {getGenres,getPlatforms} from "../../redux/actions/index";
 import { useDispatch,useSelector } from "react-redux";
 import { Link} from "react-router-dom";
 import { HOME } from '../../routers/path';
@@ -41,31 +41,27 @@ if(Object.values(initialValue.platforms).filter(res=>res!==null).length<1){
  return error
 }
 
-const  CharacterCreate=(props)=>{
+const  CharacterCreate=()=>{
     const {initialValue,errors,handleError, handleChangue,handleChangueCheckbox,handleSubmit}=useGameForm(initialForm,validation)
     const dispatch=useDispatch();
-    const { genres,Platforms,characters}=useSelector((state)=>state);
-    const [getPlatform, setGetPlatform] = useState([])
-    const [getgenre, setgetgenre] = useState([])
+    const { genres,Platforms}=useSelector((state)=>state);
+
 
 
     useEffect(() => {
       dispatch(getGenres());
-      dispatch(getCharacters())
+      dispatch(getPlatforms());
 
     }, [])
 
-    useEffect(() => {
-      dispatch(getPlatforms());
-    }, [characters])
-    
+
     
 
 
   return (
 
     <div className='container_form'> 
-      {console.log(getgenre,getPlatform)}
+
       <div className='form_back'>
             <span><Link to={HOME} style={{ color: 'rgb(204, 204, 204)', textDecoration: 'none'}}>Back home page</Link></span>
             <svg viewBox="0 0 13 10" height="10px" width="15px">
@@ -154,17 +150,17 @@ const  CharacterCreate=(props)=>{
             
                     <div className='from_checkBox_icon'>
                       {Platforms.length>1 && Platforms.map(res=>{
-                        return(<div className='from_checkBox_detail' key={res}>
+                        return(<div className='from_checkBox_detail' key={res.name}>
                           <div className='grid_checkbox'>
                             <input
                               onBlur={handleError} 
-                              id={res}
+                              id={res.name}
                               className='from_checkBox_input'
                               name="platforms"
                               type="checkbox"
-                              value={res}
+                              value={res.name}
                               onChange={(e)=>handleChangueCheckbox(e)}/>
-                              <label for={res}>{res} </label>
+                              <label for={res.name}>{res.name} </label>
                           </div>
                         </div>)})}
                       </div>
