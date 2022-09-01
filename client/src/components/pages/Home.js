@@ -4,12 +4,13 @@ import { getCharacters, getGenres,getTopGame } from '../../redux/actions';
 import  Cards  from '../common/Cards'; 
 import  '../../styles/home.css'
 import Paginate from '../common/Paginate';
-import NavBar from '../component/NavBar';
+import NavBar from '../common/NavBar';
 import SearchBar from '../common/SearchBar';
 import Loaders from '../common/Loaders';
 
 import Aside from '../common/Aside';
 import { consoles,links,gits } from '../../const/const';
+import Footer from '../common/Footer';
 
 
 const Home = () => {
@@ -113,22 +114,7 @@ const Home = () => {
 
       
       <footer className='home_footer'>
-        <div className='footer_platform'>
-          <h4>PLATAFORM</h4>
-          <ul className='footer_ul'>
-            {consoles.length>0 && consoles.map(res=>{
-              return <li key={res}>{res}</li>
-            })}
-          </ul>
-        </div>
-
-        <div className='footer_made'>
-         <h3>More information:</h3>
-         <a href='https://n9.cl/3fop6'><img src={links} alt="link" className='footer_img'/></a>
-         <a href='https://github.com/alberto8812'><img src={gits} alt="link" className='footer_img'/></a>
-        </div>
-       
-     
+        <Footer/>
       </footer>
      
        

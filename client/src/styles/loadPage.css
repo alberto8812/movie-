@@ -21,18 +21,13 @@ body{
     flex-grow: 1;
 }
 .body_start_proyect{
-    flex-basis: 400px;
+    flex-basis: 00px;
     flex-grow: 1;
     flex-shrink: 0;
+   
 }
 
-.footer_start_proyect{
-  flex-grow: 1;
 
-
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-}
 /*//////////////////////////////////header////////////////////////////////*/
 
 .header_start_proyect{
@@ -123,9 +118,9 @@ body{
 
 
 .CarruselImg{
-    max-width: 1500px;
-    width: 5000px;
-    height: 500px;
+
+    width: 100%;
+
     object-fit: cover;
     opacity: 1;
     transition: 4s;
@@ -133,18 +128,20 @@ body{
 }
 
 .CarruselImg_1{
-    max-width: 1500px;
 
-    width: 5000px;
-    height: 500px;
+
+    width: 100%;
+
     object-fit: cover;
     opacity: 0.2; 
   
 }
 .meanCarruselImg{
-    height: 500px;
+
     width: 100%;
 
 }
 
-/*////////////////////////////fin css carrusel/////////////////////////////////////*/
+/*////////////////////////////footer/////////////////////////////////////*/
+
+

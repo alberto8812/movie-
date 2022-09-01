@@ -81,14 +81,10 @@ export const iconPlatfomrs={
 /////////////////////// footer////////////////////////////////
 export const consoles=[
 "PC",
-"PS5",
-"Xbox Series X|S",
-"Nintendo Switch",
+"PlayStation",
+"Xbox ",
+"Nintendo",
 "Stadia",
-"Realidad Virtual",
-"Móviles",
-"PS4",
-"Xbox One",
-"3DS",
-"Wii U",
-"Retro"]
+"Movil",
+"Wii",
+]
