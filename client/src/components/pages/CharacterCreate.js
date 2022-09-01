@@ -5,6 +5,11 @@ import { Link} from "react-router-dom";
 import { HOME } from '../../routers/path';
 import'../../styles/form.css'
 import { useGameForm } from '../../hooks/useGameForm';
+import Loaders from '../common/Loaders'
+
+
+
+
 
 const initialForm={
   name:"",
@@ -186,7 +191,7 @@ const  CharacterCreate=()=>{
 
 
 
-       </form>:<div>Cargando...</div>}
+       </form>:<div className='Loader_form'><Loaders/></div>}
 
 
 

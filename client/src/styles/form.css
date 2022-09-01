@@ -240,3 +240,11 @@ padding: 20px;
 
    /*///////////////////////////////loader///////////////////////////////*/
 
+.Loader_form{
+    width: 100%;
+    height: 600PX;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

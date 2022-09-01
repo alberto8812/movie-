@@ -54,7 +54,7 @@ const Home = () => {
 
   return (
     <div  className='main_home_container'>
-     {console.log(currentCards,"cards unit")}
+
     <header className='home_header'>
        <h1>Bethesda Games Studios Word</h1>
        
