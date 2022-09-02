@@ -15,17 +15,17 @@ import  figura_13 from  '../img/random/figura_13.jpg'
 import  figura_14 from  '../img/random/figura_14.jpg'
 
 // varibles svg icon plat forms
+import { SiSpacemacs,SiAdobelightroomclassic,SiJaguar,SiMacos,SiSega,SiWindows,SiApple,SiLinux,SiNintendo,SiPlaystation,SiXbox,SiPlaystationvita,SiWii,SiPlaystation2,SiNintendogamecube,SiPagseguro } from 'react-icons/si';
+import { DiAndroid,DiCreativecommons} from 'react-icons/di';
+import { FiSmartphone} from 'react-icons/fi';
+import { MdWeb,MdOutlineGamepad} from 'react-icons/md';
+import { GiSensuousness,GiGamepadCross,GiSpikedHalo,GiSpiralTentacle} from 'react-icons/gi';
+import { FaNeos} from 'react-icons/fa';
 
-import Android from '../img/svg consolas/android.svg';
-import aple from '../img/svg consolas/apple.svg';
-import ios from '../img/svg consolas/ios-2.svg';
-import linux from '../img/svg consolas/linux-tux-3.svg';
-import nintendo from '../img/svg consolas/nintendo-switch.svg'
-import xbox from '../img/svg consolas/xbox-1.svg';
-import windows from '../img/svg consolas/windows-flag.svg'
-import playstation from '../img/svg consolas/playstation-4.svg'
-import sega from '../img/svg consolas/sega-1.svg'
-import Web from '../img/svg consolas/browser_internet_page_security_web_webpage_website_icon_127036 (1).svg'
+
+
+
+
 
 // personal data////////////////////////////////////////////
 import link from '../img/perdonal/LinkedIn.jpg'
@@ -63,18 +63,37 @@ export const sebarchBar_path="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 
 /// sevg imagen platforms
 
 export const iconPlatfomrs={
-    PC:windows,
-    PlayStation:playstation,
-    Xbox:xbox,
-    Nintendo:nintendo,
-    AppleMacintosh:aple,
-    Linux:linux,
-    Android:Android,
-    iOS:ios,
-    Web:Web,
-    SEGA:sega
+  PC:<SiWindows/>,
+  PlayStation:<SiPlaystation/>,
+  Xbox:<SiXbox/>,
+  Nintendo:<SiNintendo/>,
+  Apple:<SiApple/>,
+  Linux:<SiLinux/>,
+  Android:<DiAndroid/>  ,
+  iOS:<FiSmartphone/>,
+  Web:<MdWeb/>,
+  SEGA:<SiSega />,
+  PS:<SiPlaystationvita/>,
+  Wii:<SiWii/>,
+  Game:<MdOutlineGamepad/>,
+  Gines:<GiSensuousness/>,
+  Atari:<GiGamepadCross/>,
+  NES:<SiNintendogamecube/>,
+  Commodore:<DiCreativecommons/>,
+  Genesis:<SiPagseguro/>,
+  Neo:<FaNeos/>,
+  Macos:<SiMacos/>,
+  Jaguar:<SiJaguar/>,
+  Classic:<SiAdobelightroomclassic/>,
+  mac:<SiSpacemacs/>,
+  PSP:<SiPlaystationvita/>,
+  Dreamcast:<GiSpiralTentacle/>,
+  DO:<GiSpikedHalo/>
 
 }
+
+
+
 
 
 

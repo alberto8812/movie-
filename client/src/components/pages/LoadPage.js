@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Carrusel from '../common/Carrusel';
 import  '../../styles/loadPage.css'
-import { consoles, image6,links,gits } from '../../const/const';
+import {image6} from '../../const/const';
 import Footer from '../common/Footer';
 
 

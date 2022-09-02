@@ -12,7 +12,7 @@ const getAllVideogame= async (req,res)=>{
             let videoAllData=[],
             url=`https://api.rawg.io/api/games?key=${DB_KEY}`;
                
-            for (let index = 0; index < 2; index++) {
+            for (let index = 0; index < 5; index++) {
 
                 let urlVideogame=(await axios.get(url)).data;
                 let VideogameData= await urlVideogame.results.map(res=>{

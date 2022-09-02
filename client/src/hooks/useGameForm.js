@@ -2,14 +2,15 @@ import  { useState } from 'react'
 import {postCreateCharacter} from "../redux/actions/index";
 import { useDispatch} from "react-redux";
 import {useHistory } from "react-router-dom";
-import {  random } from '../const/const';
+import { random } from '../const/const';
 
 
- export const useGameForm = (Value,validate) => {
+ export const useGameForm = (Value,validation) => {
     const [initialValue, setInitialValue] = useState(Value);
     const [errors, setErrors] = useState({});
     const dispatch=useDispatch();
     const history=useHistory()
+
 
 
 
@@ -40,18 +41,21 @@ import {  random } from '../const/const';
 
 
       const handleError=(e)=>{
+  
+     
         handleChangue(e);
         handleChangueCheckbox(e);
-        setErrors(validate(initialValue));
-        
+        setErrors(validation(initialValue));
 
       }
     
       const handleSubmit=(e)=>{
         e.preventDefault()
-        setErrors(validate(initialValue))
-        if(Object.keys(errors).length===0 && initialValue.length>0){
-          
+        setErrors(validation(initialValue))
+        const validate=!initialValue.Description.trim().length<=0 && !initialValue.name.trim().length<=0 && !Object.values(initialValue.genres).filter(res=>res!==null).length<1 && !Object.values(initialValue.platforms).filter(res=>res!==null).length<1;
+
+        if(Object.keys(errors).length===0 && validate){
+   
           let initialValue2={...initialValue,
             image:initialValue.image===""?random():initialValue.image,
             genres:Object.values(initialValue.genres).filter(res=>res!==null),
@@ -71,6 +75,7 @@ import {  random } from '../const/const';
           history.push('/home');
         }
         else{
+
           return
         }
      

@@ -6,7 +6,7 @@ import '../../styles/detail.css'
 import { HOME } from '../../routers/path';
 import { iconPlatfomrs } from '../../const/const';
 import Loaders from "../common/Loaders";
-
+import { IconContext } from 'react-icons/lib';
 
 const Detail = props => {
     const {detail,detailB}=useSelector(state=>state)
@@ -57,28 +57,30 @@ const Detail = props => {
          <div className='main_character_detail_genres'>
           <h3>Genres:</h3>
           <div className='main_detail_genres_icon'>
+         
           {detail.genres.map(res=>{
             return(
             <div key={res}  className='main_detail_genres_exp'>
               <h3><b>{res}</b></h3>
             </div>)
           })}
-       
+         
           </div>   
          </div>
 
          <div className='main_character_detail_platforms'>
           <h3>Platforms:</h3>
           <div className='main_detail_genres_icon'>
+          <IconContext.Provider value={{size:"2em", color:'white',margin:"20px"}} > 
           {detail.platforms.map(res=>{
 
            return  (
             <div key={res} className='main_detail_genres_plat'>
-            <img src={iconPlatfomrs[res.split(" ").join("")]} alt={detail.name} className='genres_icon' style={{width:'50%'}}/>
+              {iconPlatfomrs[res.split(" ").join("")]}
             </div>
             )
           })}
-          
+          </IconContext.Provider>
           </div>   
          </div>
 

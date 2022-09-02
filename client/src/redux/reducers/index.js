@@ -1,4 +1,5 @@
 
+import { iconPlatfomrs } from '../../const/const';
 import { GET_TOP_GAME,GET_LOADER,GET_CHARACTER_BY_ID,GET_CHARACTERS_BY_NAME,GET_PLATFORMS,POST_CREATE_CHARACTER,GET_CHARACTERS,GET_GENRES,GET_GENRES_FILTER,GET_ORDER_CHARACTERS,GET_VIDEOGAME_CREATE,GET_ORDER_RATING_CHARACTERS } from '../Variables';
 
 const initialState = {
@@ -30,7 +31,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
   case GET_PLATFORMS:
      
    
-      console.log(payload,"hola")
+
   
   
 
@@ -38,7 +39,25 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
   case GET_CHARACTER_BY_ID:
 
-    return{...state,detail:payload,detailB:false, error:{}}
+     let platfomrApi=[...payload.platforms]
+     let ObjectPlatform=Object.keys(iconPlatfomrs)
+     let changeNamePlatform= platfomrApi.map(res=>{
+      if(res==='3DO'){return "DO"}
+      for(let i=0;i<= ObjectPlatform.length-1;i++){
+         if(res.includes(ObjectPlatform[i])){
+         
+         
+            return ( ObjectPlatform[i])
+         }
+      }
+     })
+
+     changeNamePlatform=changeNamePlatform.filter((res,index)=>{
+       return changeNamePlatform.indexOf(res)===index
+     })
+    
+
+    return{...state,detail:{...payload,platforms:changeNamePlatform},detailB:false, error:{}}
 
   case  GET_CHARACTERS_BY_NAME:
 

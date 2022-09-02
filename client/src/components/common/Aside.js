@@ -2,22 +2,25 @@ import React from 'react'
 import { iconPlatfomrs } from '../../const/const';
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom"
-
+import { IconContext } from 'react-icons/lib';
 const Aside = props => {
     const  {top}=useSelector((state)=>state);
 
 
   return (
+    
     <div className='home_aside_1'> 
+
     <div className='aside_icom_patfrom'>
-  
+    <IconContext.Provider value={{size:"2em", color:'white',margin:"20px"}} > 
     {Object.values(iconPlatfomrs).map(res=>{
       return(<div className='each_icon'  key={res}>
-        <img src={res} alt='icon'/>
+        {res}
       </div>)
     })}
+    </IconContext.Provider>
     </div>
-
+  
     <div className='aside_top'>
     <h3>Top games: </h3>
       {top&&top.map((res,index)=>{
@@ -30,6 +33,7 @@ const Aside = props => {
       </div>
 
 </div>
+
   )
 }
 

@@ -26,13 +26,14 @@ const initialForm={
 const validation=(initialValue)=>{
  let error={}
  let longName=/^.{1,20}$/;
-if(!initialValue.name){
+
+if(!initialValue.name.trim()){
   error.name="The name field is required"
 }else if(!longName.test(initialValue.name)){
   error.name="The name is too long, it doesn't exceed 20 characters"
 }
 
-if(!initialValue.Description){
+if(!initialValue.Description.trim()){
   error.Description="The Description field is required"
 }
 if(Object.values(initialValue.genres).filter(res=>res!==null).length<1){

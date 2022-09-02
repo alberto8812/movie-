@@ -214,7 +214,7 @@ padding: 10px;
 .home_aside_1{
  
     display: grid;
-    grid-template-rows: 500px 1200px  1fr;
+    grid-template-rows: 800px 1200px  1fr;
 
  
 }
