@@ -85,8 +85,8 @@ export const iconPlatfomrs={
   Macos:<SiMacos/>,
   Jaguar:<SiJaguar/>,
   Classic:<SiAdobelightroomclassic/>,
-  mac:<SiSpacemacs/>,
-  PSP:<SiPlaystationvita/>,
+  macOS:<SiSpacemacs/>,
+  PSP:<SiPlaystation2/>,
   Dreamcast:<GiSpiralTentacle/>,
   DO:<GiSpikedHalo/>
 

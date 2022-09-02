@@ -251,6 +251,10 @@ border-radius: 15px;
 
 }
 
+.each_icon:hover{
+    background-color: rgb(126, 121, 121);
+}
+
 .each_icon img{
     border-radius:20px;
     width: 70%;

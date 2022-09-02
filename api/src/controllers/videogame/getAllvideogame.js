@@ -56,7 +56,7 @@ const getAllVideogame= async (req,res)=>{
                     image:res.image,
                     rating:res.rating,
                     genres:res.genres.map(res=>res.name),
-                    platforms:res.genres.map(res=>res.name),
+                    platforms:res.platforms.map(res=>res.name),
                     createInDb:res.createInDb
                 }
              })

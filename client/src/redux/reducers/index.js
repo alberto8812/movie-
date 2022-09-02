@@ -1,7 +1,6 @@
 
 import { iconPlatfomrs } from '../../const/const';
-import { GET_TOP_GAME,GET_LOADER,GET_CHARACTER_BY_ID,GET_CHARACTERS_BY_NAME,GET_PLATFORMS,POST_CREATE_CHARACTER,GET_CHARACTERS,GET_GENRES,GET_GENRES_FILTER,GET_ORDER_CHARACTERS,GET_VIDEOGAME_CREATE,GET_ORDER_RATING_CHARACTERS } from '../Variables';
-
+import { GET_TOP_GAME,GET_LOADER,GET_CHARACTER_BY_ID,GET_CHARACTERS_BY_NAME,GET_PLATFORMS,POST_CREATE_CHARACTER,GET_CHARACTERS,GET_GENRES,GET_GENRES_FILTER,GET_ORDER_CHARACTERS,GET_VIDEOGAME_CREATE,GET_ORDER_RATING_CHARACTERS, GET_FILTER_PLATFORM } from '../Variables';
 const initialState = {
   characters:[],
   Allcharacters:[],
@@ -21,6 +20,9 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
 
   case GET_CHARACTERS:
+
+
+  
 
     return { ...state, characters:payload,Allcharacters:payload, error:{}}
   
@@ -166,6 +168,29 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
 
     return {...state,top:topcharactersOrderRating}
+
+    case GET_FILTER_PLATFORM:
+
+      let  FilterPlatform=[...state.Allcharacters]
+     let ObjectPlatform2=Object.keys(iconPlatfomrs)
+     let changeNamePlatform2= FilterPlatform.map(res=>{
+        return {...res,platforms:res.platforms.map(data=>{
+          if(data==='3DO'){return "DO"}
+         for(let i=0;i<= ObjectPlatform2.length-1;i++){
+             if(data.includes(ObjectPlatform2[i])){ 
+              return ( ObjectPlatform2[i])
+             }
+          }
+        })
+      }})
+
+
+      //let  FilterPlatform=[...state.Allcharacters]
+      changeNamePlatform2=changeNamePlatform2.filter(res=>res.platforms.includes(payload))
+      console.log( payload)
+      console.log( changeNamePlatform2)
+      
+    return {...state,characters:changeNamePlatform2}
   
   default:
     return state

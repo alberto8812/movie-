@@ -3,9 +3,18 @@ import { iconPlatfomrs } from '../../const/const';
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom"
 import { IconContext } from 'react-icons/lib';
-const Aside = props => {
-    const  {top}=useSelector((state)=>state);
+import { useDispatch } from "react-redux";
+import { getFilterPlatform } from '../../redux/actions';
 
+
+const Aside = () => {
+    const  {top}=useSelector((state)=>state);
+    const dispatch=useDispatch()
+
+
+const handlePlatform=(e)=>{
+  dispatch(getFilterPlatform(e))
+}
 
   return (
     
@@ -13,9 +22,10 @@ const Aside = props => {
 
     <div className='aside_icom_patfrom'>
     <IconContext.Provider value={{size:"2em", color:'white',margin:"20px"}} > 
-    {Object.values(iconPlatfomrs).map(res=>{
-      return(<div className='each_icon'  key={res}>
-        {res}
+    {Object.keys(iconPlatfomrs).map(res=>{
+
+      return(<div className='each_icon'  key={res}  onClick={()=>handlePlatform(res)}>
+        {iconPlatfomrs[res]}
       </div>)
     })}
     </IconContext.Provider>
