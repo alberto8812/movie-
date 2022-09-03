@@ -7,10 +7,9 @@ import Paginate from '../common/Paginate';
 import NavBar from '../common/NavBar';
 import SearchBar from '../common/SearchBar';
 import Loaders from '../common/Loaders';
-
 import Aside from '../common/Aside';
-import { consoles,links,gits } from '../../const/const';
 import Footer from '../common/Footer';
+import Error500 from '../common/Error500';
 
 
 const Home = () => {
@@ -44,12 +43,7 @@ const Home = () => {
           
         }, [getAllCharacters])
         
-        useEffect(() => {
-          if(Object.keys(error)[0]==="msg"){
 
-            alert(error.msg)
-         }
-        }, [error])
         
 
 
@@ -94,7 +88,7 @@ const Home = () => {
             
             }
           </div>)
-       }):<div className='loader'><Loaders/></div>}
+       }):error?<Error500/>:<div className='loader'><Loaders/></div>}
        </div>
 
        <div className='container_pagination'>

@@ -9,7 +9,7 @@ const initialState = {
   detail:[],
   top:[],
   detailB:true,
-  error:{}
+  error:false
 
 
 }
@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
   
 
-    return { ...state, characters:payload,Allcharacters:payload, error:{}}
+    return { ...state, characters:payload,Allcharacters:payload, error:false}
   
   case GET_GENRES:
        
@@ -62,12 +62,13 @@ const rootReducer = (state = initialState, { type, payload }) => {
     return{...state,detail:{...payload,platforms:changeNamePlatform},detailB:false, error:{}}
 
   case  GET_CHARACTERS_BY_NAME:
+   
 
     return{
       ...state,
-      characters:Object.keys(payload)[0]!=="msg"?payload:[...state.Allcharacters],
+      characters:Object.keys(payload)[0]!=="msg"?payload:[],
       detailB:false,
-      error:Object.keys(payload)[0]==="msg"?payload:{}
+      error:Object.keys(payload)[0]==="msg"?true:false
     }
 
 
@@ -78,7 +79,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
       let  genresFilter=payload==='-->'? AllcharactersGen : AllcharactersGen.filter(res=>res.genres.includes(payload) );
       let  genresFilterdb= payload==='-->'?[]:AllcharactersGen.filter(res=>res.createInDb===true && res.genres.find(data=>data.name===payload));
       
-       return {...state,characters:genresFilterdb.length>=1?genresFilter.concat(genresFilterdb):genresFilter}
+       return {...state,characters:genresFilterdb.length>=1?genresFilter.concat(genresFilterdb):genresFilter,error:genresFilter.length<1 && genresFilterdb.length<1?true:false}
 
 
   case POST_CREATE_CHARACTER:
@@ -187,10 +188,9 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
       //let  FilterPlatform=[...state.Allcharacters]
       changeNamePlatform2=changeNamePlatform2.filter(res=>res.platforms.includes(payload))
-      console.log( payload)
-      console.log( changeNamePlatform2)
+
       
-    return {...state,characters:changeNamePlatform2}
+    return {...state,characters:changeNamePlatform2,error:changeNamePlatform2.length>1?false:true}
   
   default:
     return state

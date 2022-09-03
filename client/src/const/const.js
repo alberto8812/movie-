@@ -6,6 +6,7 @@ import  image_3  from '../img/image_3.jpg';
 import  image_4  from '../img/image_4.jpg';
 import  image_5  from '../img/image_5.jpg';
 import  image_6  from '../img/image_6.jpg';
+import  image_8  from '../img/image_next_8.jpg';
 //variables randoms
 import  figura_9 from  '../img/random/figura_9.jpg';
 import  figura_10 from  '../img/random/figura_10.jpg'
@@ -38,6 +39,8 @@ export const image3=image_3
 export const image4=image_4
 export const image5=image_5
 export const image6=image_6
+export const image8=image_8 
+
 export const  links=link
 export const  gits=git
 /////////defoult image//////////////////////////////////////////////////////
