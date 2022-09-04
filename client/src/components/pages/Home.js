@@ -69,13 +69,23 @@ const Home = () => {
 
       <body className='home_body'>
         
+      <div className='container_pagination'>
+     
+        <Paginate characteByPage={characteByPage} 
+        pagine={pagine} 
+        getAllCharacters={getAllCharacters.length} 
+        currentPage={currentPage}
 
+        />
+    
+        </div>
       
 
       <div className='container_cards'>
      
        
        {currentCards.length>0?currentCards.map(res=>{
+        
       
           return(<div className='container_oneCard' key={res.id}>{
             <Cards 
@@ -91,16 +101,7 @@ const Home = () => {
        }):error?<Error500/>:<div className='loader'><Loaders/></div>}
        </div>
 
-       <div className='container_pagination'>
-     
-        <Paginate characteByPage={characteByPage} 
-        pagine={pagine} 
-        getAllCharacters={getAllCharacters.length} 
-        currentPage={currentPage}
-
-        />
     
-        </div>
    
       </body>
 

@@ -22,23 +22,23 @@ const handlePlatform=(e)=>{
 
     <div className='aside_icom_patfrom'>
     <IconContext.Provider value={{size:"2em", color:'white',margin:"20px"}} > 
-    {Object.keys(iconPlatfomrs).map(res=>{
+    {top.length>1?Object.keys(iconPlatfomrs).map(res=>{
 
       return(<div className='each_icon'  key={res}  onClick={()=>handlePlatform(res)}>
         {iconPlatfomrs[res]}
       </div>)
-    })}
+    }):<h3>Loading..</h3>}
     </IconContext.Provider>
     </div>
   
     <div className='aside_top'>
     <h3>Top games: </h3>
-      {top&&top.map((res,index)=>{
+      {top.length>1?top.map((res,index)=>{
         return(<Link to={`/home/${res.id}`} style={{ color: 'rgb(204, 204, 204)', textDecoration: 'none'}} key={index}><div className='aside_top_game' >
           <h5>{`${index +1}.${res.name}`}</h5>
    
         </div></Link>)
-      })}
+      }):<h3>Loading..</h3>}
 
       </div>
 

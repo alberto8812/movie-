@@ -55,11 +55,11 @@ const getAllcharacter=useSelector((state)=>state.characters)
 
 
         <div className='main_searchbar_selector'>
-        <label>Order by</label>
+        <label>Order:</label>
         <select className='main_selector'  onClick={(e=>handleOrderCharacter(e))} >
            <option value={'-->'} className='main_option_select' >{'...'}</option>
-           <option value='Ascendente' >Ascendente</option>
-           <option value='desendente' >desendente</option>
+           <option value='Ascendente' >Ascending</option>
+           <option value='desendente' >Descending</option>
         </select>
         </div>
 
