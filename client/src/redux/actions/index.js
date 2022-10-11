@@ -6,6 +6,7 @@ import {GET_FILTER_PLATFORM,GET_TOP_GAME,GET_LOADER,GET_CHARACTER_BY_ID,GET_CHAR
 
 
 export const getCharacters = () => {
+
   return async function (dispatch){
    let getCharactersData=await  AXIOSCHARACS()
 
