@@ -6,7 +6,7 @@ const axios=require("axios");
 
 const getAllVideogame= async (req,res)=>{
     const {name} = req.query;
-    
+
         try {
        
             let videoAllData=[],
