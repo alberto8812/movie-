@@ -1,4 +1,7 @@
-![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
+
+![Blue_Modern_Isolated_Line_Technology_Logo-removebg-preview](https://user-images.githubusercontent.com/101751073/195115839-8da43d2b-cae5-4096-9517-f3e70d8044a9.png)
+
+
 
 # Individual Project - Henry Videogames
 
